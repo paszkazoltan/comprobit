@@ -1,0 +1,28 @@
+{
+    "map": {
+        "fooldal": "fooldal",
+        "Arduino": "arduino",
+        "Arduino_kod": "arduino-kod",
+        "ArduinoLinkek": "arduino-linkek",
+        "WeDorobotok": "wedo",
+        "SpikeRobotok": "spike",
+        "mindstorms": "mindstorms",
+        "3dnyomtatas": "3d-nyomtatas",
+        "3d_nyomtatas": "3d-feladat",
+        "galeria": "galeria",
+        "video": "video"
+    },
+    "titles": {
+        "fooldal": "Főoldal",
+        "arduino": "Arduino szakkör",
+        "arduino-kod": "Arduino kód",
+        "arduino-linkek": "Arduino linkek",
+        "wedo": "WeDo robotok szakkör",
+        "spike": "Spike robotok szakkör",
+        "mindstorms": "Mindstorms EV3 szakkör",
+        "3d-nyomtatas": "3D nyomtatás szakkör",
+        "3d-feladat": "3D feladat",
+        "galeria": "Képgaléria",
+        "video": "Videó"
+    }
+}
