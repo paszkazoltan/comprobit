@@ -897,9 +897,15 @@ a[data-toggle="lightbox"]:hover img { transform: scale(1.06); }
   .album-grid { gap: 12px; }
 }
 
-.video-gallery { width: 100%; }
-.video-card { padding: 18px; }
-.video-card h5 { color: var(--navy); }
+/* Kis albumoknál (1–4 kép) nem négy-ötoszlopos csempéket használunk */
+.album-grid--short { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 768px) { .album-grid--short { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Videógaléria — nem nyúlik ki a teljes képernyőre, 16:9 bélyegképek */
+.video-gallery { width: min(1080px, calc(100% - var(--gutter) * 2)); margin-inline: auto; }
+.video-card { padding: 14px; }
+.video-card h5 { color: var(--navy); text-align: center; }
+.video-card a[data-toggle="lightbox"] { aspect-ratio: 16 / 9; max-width: 300px; margin-inline: auto; }
 .video-frame { position: relative; aspect-ratio: 16 / 9; border: var(--stroke); border-radius: var(--r-sm); overflow: hidden; }
 .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
