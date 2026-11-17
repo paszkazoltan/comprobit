@@ -1,34 +1,88 @@
-<!-- HERO / ÜDVÖZLŐ SZEKCIÓ -->
-<section class="hero-section text-center">
-
-    <div class="welcome-box">
-
-        <h1 class="welcome-title">
-            Üdvözöljük a CompRobIT K.F.T. honlapján!
-        </h1>
-
-
-		<div class="welcome-text">
-
-			<p>
-				<strong>
-					2019 óta azon dolgozunk, hogy Kézdivásárhelyen és környékén 
-				</strong>
-					minél több gyermek számára tegyük elérhetővé a robotika
-					és a programozás izgalmas világát.
-				
-			</p>
-
-		</div>
-                <h2 class="welcome-title">
-            Fedezd fel velünk a robotika világát!
-        </h2>
-
-
+<!-- HERO — split layout: owl-robot mascot left, headline right -->
+<section class="home-hero">
+  <div class="container hero-grid">
+    <div class="mascot-column">
+      <div class="mascot-panel">
+        <div class="dotgrid" aria-hidden="true"></div>
+        <svg class="mascot" viewBox="0 0 320 380" role="img" aria-label="Comp, a CompRobIT robot-bagoly kabala">
+          <ellipse cx="160" cy="222" rx="118" ry="122" fill="#F6C544" stroke="#243A6B" stroke-width="7"/>
+          <path d="M48 238 Q160 302 272 238 Q272 350 160 350 Q48 350 48 238 Z" fill="#2E7D7B" stroke="#243A6B" stroke-width="7"/>
+          <circle cx="160" cy="292" r="26" fill="#FBF3E0" stroke="#243A6B" stroke-width="6"/>
+          <path d="M160 276 v32 M144 292 h32" stroke="#F6C544" stroke-width="5" stroke-linecap="round"/>
+          <ellipse cx="160" cy="202" rx="78" ry="88" fill="#FBF3E0" stroke="#243A6B" stroke-width="6"/>
+          <circle cx="125" cy="170" r="38" fill="#ffffff" stroke="#243A6B" stroke-width="6"/>
+          <circle cx="195" cy="170" r="38" fill="#ffffff" stroke="#243A6B" stroke-width="6"/>
+          <circle cx="132" cy="174" r="15" fill="#243A6B"/>
+          <circle cx="188" cy="174" r="15" fill="#243A6B"/>
+          <circle cx="137" cy="169" r="5" fill="#ffffff"/>
+          <circle cx="193" cy="169" r="5" fill="#ffffff"/>
+          <path d="M160 192 l18 24 h-36 Z" fill="#E2483B" stroke="#243A6B" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M80 96 L100 144 L60 136 Z" fill="#F6C544" stroke="#243A6B" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M240 96 L220 144 L260 136 Z" fill="#F6C544" stroke="#243A6B" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M160 66 L160 92" stroke="#243A6B" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="160" cy="56" r="12" fill="#E2483B" stroke="#243A6B" stroke-width="6"/>
+          <g class="wave-wing">
+            <path d="M262 252 Q320 202 305 152 Q300 132 285 147 Q300 202 250 237 Z" fill="#F6C544" stroke="#243A6B" stroke-width="6" stroke-linejoin="round"/>
+          </g>
+          <path d="M58 252 Q20 272 35 322 Q60 302 75 272 Z" fill="#F6C544" stroke="#243A6B" stroke-width="6" stroke-linejoin="round"/>
+          <circle cx="92" cy="242" r="5" fill="#243A6B"/>
+          <circle cx="228" cy="242" r="5" fill="#243A6B"/>
+          <path d="M130 348 l-10 14 M130 348 l4 16 M130 348 l14 12" stroke="#E2483B" stroke-width="5" stroke-linecap="round"/>
+          <path d="M195 348 l-10 14 M195 348 l4 16 M195 348 l14 12" stroke="#E2483B" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="speech-tag">Szia, én Comp! 👋</div>
     </div>
-
+    <div class="hero-copy">
+      <span class="enroll-pill">Most iratkozhatsz · 2026 ősze</span>
+      <h1 class="hero-title">Üdvözlünk a <span class="squiggle-word">robotika<svg class="chalk-underline" viewBox="0 0 320 20" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M4 13 Q80 4 160 11 T316 9" />
+          </svg></span> világában!</h1>
+      <p class="hero-lead">2019 óta azon dolgozunk, hogy Kézdivásárhelyen és környékén minél több gyermek számára tegyük elérhetővé a robotika és a programozás izgalmas világát.</p>
+      <p class="hero-hand">Fedezd fel velünk a robotika világát! ✏️</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSdnj9QvpO7LKaVmtKP-IkAENdqeXb451go6BFTy-sMXLh7CHw/viewform" target="_blank" rel="noopener noreferrer">
+          <i class="ti ti-walk" aria-hidden="true"></i> Jelentkezés
+        </a>
+        <a class="story-link" href="/comprobit/wedo/">Fedezd fel a szakköröket →</a>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- NAVY BAND — bell-schedule style ticket cards -->
+<section class="bell-band" aria-label="A mi órarendünk">
+  <div class="band-head">
+    <h2 class="band-title"><i class="ti ti-bell" aria-hidden="true"></i> A mi órarendünk</h2>
+    <span class="band-hint">↓ görgesd végig a foglalkozásokat →</span>
+  </div>
+  <div class="bell-strip">
+    <a class="bell-card" href="/comprobit/wedo/">
+      <p class="bell-time">7–8 ÉV</p>
+      <div><i class="ti ti-building-blocks" aria-hidden="true"></i><p class="bell-title">LEGO WeDo</p></div>
+    </a>
+    <a class="bell-card" href="/comprobit/spike/">
+      <p class="bell-time">8–11 ÉV</p>
+      <div><i class="ti ti-cpu" aria-hidden="true"></i><p class="bell-title">LEGO Spike</p></div>
+    </a>
+    <a class="bell-card" href="/comprobit/mindstorms/">
+      <p class="bell-time">11–15 ÉV</p>
+      <div><i class="ti ti-robot" aria-hidden="true"></i><p class="bell-title">Mindstorms EV3</p></div>
+    </a>
+    <a class="bell-card" href="/comprobit/arduino/">
+      <p class="bell-time">15–17 ÉV</p>
+      <div><i class="ti ti-circuit-board" aria-hidden="true"></i><p class="bell-title">Arduino</p></div>
+    </a>
+    <a class="bell-card" href="/comprobit/3d-nyomtatas/">
+      <p class="bell-time">15 ÉV FELETT</p>
+      <div><i class="ti ti-cube-send" aria-hidden="true"></i><p class="bell-title">3D nyomtatás</p></div>
+    </a>
+    <a class="bell-card is-now" href="https://docs.google.com/forms/d/e/1FAIpQLSdnj9QvpO7LKaVmtKP-IkAENdqeXb451go6BFTy-sMXLh7CHw/viewform" target="_blank" rel="noopener noreferrer">
+      <div class="bell-top"><p class="bell-time">2026 ŐSZ</p><span class="now-pill">MOST</span></div>
+      <div><i class="ti ti-pencil" aria-hidden="true"></i><p class="bell-title">Jelentkezés</p></div>
+    </a>
+  </div>
+</section>
 
 <!-- =============================
      KOROSZTÁLYOK

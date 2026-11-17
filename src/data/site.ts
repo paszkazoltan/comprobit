@@ -17,6 +17,8 @@ export interface Copy {
   footerExplore: string;
   footerConnect: string;
   footerRights: string;
+  footerCtaTitle: string;
+  footerCtaText: string;
   skip: string;
   menu: string;
   close: string;
@@ -40,6 +42,8 @@ export const copy: Record<Lang, Copy> = {
     footerExplore: "Fedezd fel",
     footerConnect: "Kapcsolat",
     footerRights: "Webmaster: Sentes István",
+    footerCtaTitle: "Építs velünk robotot!",
+    footerCtaText: "Regisztrálj a CompRobIT szakkörre, és fedezd fel a programozás világát.",
     skip: "Ugrás a tartalomra",
     menu: "Menü",
     close: "Bezárás",
@@ -56,6 +60,8 @@ export const copy: Record<Lang, Copy> = {
     footerExplore: "Explorează",
     footerConnect: "Contact",
     footerRights: "Webmaster: Sentes István",
+    footerCtaTitle: "Construiește un robot cu noi!",
+    footerCtaText: "Înscrie-te la cercul CompRobIT și descoperă lumea programării.",
     skip: "Sari la conținut",
     menu: "Meniu",
     close: "Închide",

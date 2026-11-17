@@ -49,7 +49,7 @@ function isActive(item: NavItem): boolean {
     <meta name="generator" content={Astro.generator} />
     <title>{title} · CompRobIT</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0b1224" />
+    <meta name="theme-color" content="#243a6b" />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="hu" href={`https://paszkazoltan.github.io${BASE}${lang === "hu" ? path : altPath}`} />
     <link rel="alternate" hreflang="ro" href={`https://paszkazoltan.github.io${BASE}${lang === "ro" ? path : altPath}`} />
@@ -64,8 +64,12 @@ function isActive(item: NavItem): boolean {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Cabin:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css"
     />
     <link
       rel="stylesheet"
@@ -75,16 +79,10 @@ function isActive(item: NavItem): boolean {
   <body data-lang={lang} data-slug={slug}>
     <a class="skip-link" href="#main-content">{t.skip}</a>
 
-    <div class="aurora" aria-hidden="true">
-      <span class="aurora-blob aurora-one"></span>
-      <span class="aurora-blob aurora-two"></span>
-      <span class="aurora-blob aurora-three"></span>
-    </div>
-
     <header class="site-header">
       <div class="header-inner container">
         <a class="brand" href={BASE} aria-label={t.brand}>
-          <span class="brand-mark"><i class="fa-solid fa-robot"></i></span>
+          <span class="brand-mark"><i class="ti ti-school"></i></span>
           <span class="brand-text">
             <strong>{t.brand}</strong>
             <small>{t.tagline}</small>
@@ -92,7 +90,7 @@ function isActive(item: NavItem): boolean {
         </a>
 
         <button class="nav-toggle" type="button" aria-label={t.menu} aria-expanded="false">
-          <i class="fa-solid fa-bars"></i>
+          <i class="ti ti-menu-2"></i>
         </button>
 
         <nav class="main-nav" aria-label={t.menu}>
@@ -106,8 +104,8 @@ function isActive(item: NavItem): boolean {
                   {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 >
                   {item.label}
-                  {item.external && <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>}
-                  {item.children && <i class="fa-solid fa-chevron-down chevron"></i>}
+                  {item.external && <i class="ti ti-arrow-up-right external-icon"></i>}
+                  {item.children && <i class="ti ti-chevron-down chevron"></i>}
                 </a>
                 {item.children && (
                   <ul class="dropdown">
@@ -127,11 +125,11 @@ function isActive(item: NavItem): boolean {
 
         <div class="header-actions">
           <a class="lang-switch" href={alternate} aria-label={t.language}>
-            <i class="fa-solid fa-globe"></i>
+            <i class="ti ti-world"></i>
             <span>{other === "ro" ? "RO" : "HU"}</span>
           </a>
           <a class="btn btn-register" href={REGISTER_URL} target="_blank" rel="noopener noreferrer">
-            {t.register} <i class="fa-solid fa-arrow-right ms-2"></i>
+            {t.register} <i class="ti ti-arrow-right ms-2"></i>
           </a>
         </div>
       </div>
@@ -142,10 +140,23 @@ function isActive(item: NavItem): boolean {
     </main>
 
     <footer class="site-footer">
+      <div class="spiral-top" aria-hidden="true"></div>
+      <div class="footer-cta">
+        <div class="footer-cta-group">
+          <i class="ti ti-mail" aria-hidden="true"></i>
+          <div>
+            <h2>{t.footerCtaTitle}</h2>
+            <p>{t.footerCtaText}</p>
+          </div>
+        </div>
+        <a class="btn btn-lg" href={REGISTER_URL} target="_blank" rel="noopener noreferrer">
+          <i class="ti ti-walk"></i> {t.register}
+        </a>
+      </div>
       <div class="container footer-grid">
         <div class="footer-about">
           <a class="brand brand-footer" href={BASE}>
-            <span class="brand-mark"><i class="fa-solid fa-robot"></i></span>
+            <span class="brand-mark"><i class="ti ti-school"></i></span>
             <span class="brand-text"><strong>{t.brand}</strong></span>
           </a>
           <p>{t.footerAbout}</p>
@@ -159,22 +170,22 @@ function isActive(item: NavItem): boolean {
         <div>
           <h3>{t.footerConnect}</h3>
           <ul class="footer-links">
-            <li><a href="mailto:info@comprobit.ro"><i class="fa-solid fa-envelope me-2"></i>info@comprobit.ro</a></li>
-            <li><a href={REGISTER_URL} target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-signature me-2"></i>{t.register}</a></li>
+            <li><a href="mailto:info@comprobit.ro"><i class="ti ti-mail me-2"></i>info@comprobit.ro</a></li>
+            <li><a href={REGISTER_URL} target="_blank" rel="noopener noreferrer"><i class="ti ti-file-description me-2"></i>{t.register}</a></li>
           </ul>
         </div>
       </div>
       <div class="container footer-bottom">
         <span>© {new Date().getFullYear()} {t.brand}. {t.footerRights}</span>
-        <span class="footer-badge"><i class="fa-solid fa-code"></i> Astro · TypeScript</span>
+        <span class="footer-badge"><i class="ti ti-code"></i> Astro · TypeScript</span>
       </div>
     </footer>
 
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery">
-      <button class="lightbox-close" type="button" aria-label={t.close}><i class="fa-solid fa-xmark"></i></button>
-      <button class="lightbox-prev" type="button" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="lightbox-close" type="button" aria-label={t.close}><i class="ti ti-x"></i></button>
+      <button class="lightbox-prev" type="button" aria-label="Previous"><i class="ti ti-chevron-left"></i></button>
       <img id="lightbox-image" src="" alt="" />
-      <button class="lightbox-next" type="button" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+      <button class="lightbox-next" type="button" aria-label="Next"><i class="ti ti-chevron-right"></i></button>
       <span class="lightbox-caption" id="lightbox-caption"></span>
     </div>
 
