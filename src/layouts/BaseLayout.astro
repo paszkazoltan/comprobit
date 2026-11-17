@@ -200,15 +200,16 @@ function isActive(item: NavItem): boolean {
       const lightbox = document.getElementById("lightbox");
       const lightboxImage = document.getElementById("lightbox-image") as HTMLImageElement | null;
       const caption = document.getElementById("lightbox-caption");
-      const galleryLinks = Array.from(
+      const allGalleryLinks = Array.from(
         document.querySelectorAll<HTMLAnchorElement>('a[data-toggle="lightbox"]')
       );
+      let activeGallery: HTMLAnchorElement[] = [];
       let currentIndex = 0;
 
       function show(index: number) {
-        if (!galleryLinks.length || !lightboxImage) return;
-        currentIndex = (index + galleryLinks.length) % galleryLinks.length;
-        const link = galleryLinks[currentIndex];
+        if (!activeGallery.length || !lightboxImage) return;
+        currentIndex = (index + activeGallery.length) % activeGallery.length;
+        const link = activeGallery[currentIndex];
         const img = link.querySelector("img");
         lightboxImage.src = link.href;
         lightboxImage.alt = img?.alt ?? "";
@@ -217,10 +218,14 @@ function isActive(item: NavItem): boolean {
         document.body.classList.add("lightbox-open");
       }
 
-      galleryLinks.forEach((link, index) => {
+      allGalleryLinks.forEach((link) => {
         link.addEventListener("click", (event) => {
           event.preventDefault();
-          show(index);
+          const name = link.getAttribute("data-gallery");
+          activeGallery = name
+            ? allGalleryLinks.filter((item) => item.getAttribute("data-gallery") === name)
+            : [link];
+          show(activeGallery.indexOf(link));
         });
       });
 
