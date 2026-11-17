@@ -14,6 +14,10 @@ A korábbi PHP implementáció a `backup/php` ágon érhető el. A jelenlegi `ma
 - Egyedi CSS design-system (`src/styles/global.css`) – nincs Bootstrap függőség
 - Vanilla JS a mobil menühöz és a galéria lightboxhoz
 
+## Dizájn
+
+A [Kombai Maplewood Day School](https://kombai.com/gallery/inspirations/maplewood/) referenciája alapján: krém vászon (`#FBF3E0`), sötétkék (`#243A6B`), teal (`#2E7D7B`), piros (`#E2483B`) és sárga (`#F6C544`) akcentusok, 3px kék keretek és kemény árnyékok. Betűkészlet: **Bitter** (címek), **Cabin** (szöveg), **Kalam** (kézzel írt kiegészítők). A főoldalon osztott hero egyedi robot-bagoly kabalafigurával, krétás aláhúzással és sötétkék „jegykártya" sávval.
+
 ## Tartalom
 
 - `/` – magyar, `/ro/` – román
