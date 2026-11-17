@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://comprobit.ro/sitemap.xml
+
+Sitemap: https://paszkazoltan.github.io/comprobit/sitemap-index.xml
