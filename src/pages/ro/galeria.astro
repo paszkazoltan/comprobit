@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import content from '../../content/ro/galeria.html?raw';
+---
+
+<BaseLayout lang="ro" title="Galerie foto" description="Cercuri de robotică CompRobIT în Târgu Secuiesc – LEGO WeDo, Spike, Mindstorms, Arduino și imprimare 3D din 2019." slug="galeria" route="ro/galeria">
+  <div class="page-content" set:html={content} />
+</BaseLayout>

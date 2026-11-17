@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import content from '../content/hu/3d-feladat.html?raw';
+---
+
+<BaseLayout lang="hu" title="3D feladat" description="CompRobIT Robotika szakkörök Kézdivásárhelyen – LEGO WeDo, Spike, Mindstorms, Arduino és 3D nyomtatás 2019 óta." slug="3d-feladat" route="3d-feladat">
+  <div class="page-content" set:html={content} />
+</BaseLayout>

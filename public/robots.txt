@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://paszkazoltan.github.io/comprobit/sitemap-index.xml

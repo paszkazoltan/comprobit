@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import content from '../content/hu/arduino.html?raw';
+---
+
+<BaseLayout lang="hu" title="Arduino szakkör" description="CompRobIT Robotika szakkörök Kézdivásárhelyen – LEGO WeDo, Spike, Mindstorms, Arduino és 3D nyomtatás 2019 óta." slug="arduino" route="arduino">
+  <div class="page-content" set:html={content} />
+</BaseLayout>

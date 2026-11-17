@@ -1,40 +1,45 @@
-# CompRobIT – felújított weboldal
+# CompRobIT – új weboldal (Astro + TypeScript)
 
-A `comprobit.ro` (CompRobIT K.F.T., Kézdivásárhely) robotika szakkör oldal
-újraépített, feljavított változata. Kétnyelvű: **magyar (HU)** és **román (RO)**.
+A [comprobit.ro](https://comprobit.ro/) robotika szakkör oldalának újraírt, kétnyelvű változata.
 
-## Főbb fejlesztések az eredetihez képest
+A korábbi PHP implementáció a `backup/php` ágon érhető el. A jelenlegi `main` egy **Astro + TypeScript** statikus oldal, amit a GitHub Pages szolgál ki:
 
-- **Tiszta URL-ek**: `?main=Arduino` helyett `/arduino`
-- **Kétnyelvűség**: `/` = magyar, `/ro/` = román (nyelvváltó a menüben)
-- **Biztonság**: CSP, `X-Frame-Options`, `X-Content-Type-Options`,
-  `Referrer-Policy`, HSTS fejlécek; a gép által listázható könyvtárak tiltása
-  (`Options -Indexes`); az admin hivatkozás eltávolítva a nyilvános menüből
-- **Sablonrendszer**: egységes fejléc/lábléc (`inc/layout.php`), router (`index.php`)
-- **SEO**: `robots.txt`, `sitemap.xml`, Open Graph tagek, `hreflang` jelölések
-- **Akadálymentesség**: „Ugrás a tartalomra” link, ARIA címkék
-- **Modern design**: saját design-system (`assets/css/style.css`)
+**https://paszkazoltan.github.io/comprobit/**
 
-## Szerkezet
+## Technológia
 
-```
-index.php            router (clean URL + nyelv + biztonsági fejlécek)
-inc/layout.php       közös fejléc/lábléc
-inc/lang/{hu,ro}.php nyelvi szótár (menü, feliratok)
-inc/routes.json      útvonal- és cím-térkép
-pages/*.html         magyar tartalom
-pages/ro/*.html      román tartalom
-assets/              CSS és képek
-build/extract.php    az eredeti oldal tartalmát kinyerő script
-```
+- **Astro 5** – statikus HTML kimenet, nulla futásidejű JavaScript
+- **TypeScript** – típusos navigáció és tartalomadatok (`src/data/site.ts`)
+- **@astrojs/sitemap** – automatikus `sitemap-index.xml`
+- Egyedi CSS design-system (`src/styles/global.css`) – nincs Bootstrap függőség
+- Vanilla JS a mobil menühöz és a galéria lightboxhoz
 
-## Futtatás
+## Tartalom
+
+- `/` – magyar, `/ro/` – román
+- 11 tartalmi oldal nyelvenként, tiszta URL-lel (`/wedo/`, `/ro/wedo/` stb.)
+- A magyar tartalom az élő `comprobit.ro` aktuális oldalairól származik, beleértve a legújabb változásokat:
+  - **Szülői betekintés** menüpont és átirányítás a szülői portálra
+  - WeDo / Spike / Mindstorms videószakaszok
+  - **CompRobIT 2025-Arduino** galéria és a friss 2026-os képek
+  - Frissített videócímek
+- A román fordítás a korábbi `pages/ro/` tartalomból származik, a new elemekkel kiegészítve
+
+## Fejlesztés
 
 ```bash
-php -S localhost:8000
-# http://localhost:8000/        (HU)
-# http://localhost:8000/ro/     (RO)
+npm install
+npm run dev      # http://localhost:4321/comprobit/
+npm run build    # kimenet: dist/
+npm run preview
 ```
 
-> GitHub Pages nem futtat PHP-t; ez a repó a forráskód. Élesítés PHP-t futtató
-> tárhelyen (Apache/nginx) történik.
+## Publikálás
+
+A `dist/` tartalma megy a `gh-pages` ágra. A `.nojekyll` fájl biztosítja, hogy a GitHub Pages ne dolgozza fel Jekyllként az `_astro` könyvtárt.
+
+## Biztonság
+
+- CSP-barát, statikus kimenet – nincs szerveroldali kód, nincs adatbázis
+- hreflang és canonical linkek minden oldalon
+- A korábban a logokban szereplő hitelesítő adatok eltávolításra kerültek; az aktív GitHub token a helyi git credential store-ban (600 jog) van
