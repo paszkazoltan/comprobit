@@ -407,7 +407,7 @@ li { margin-bottom: 0.4rem; }
   .hero-grid { grid-template-columns: 5fr 6fr; gap: 64px; }
 }
 
-/* Mascot tile */
+/* HERO — ikoncsoport valódi (kézzel rajzolt) Tabler ikonokból */
 .mascot-column { position: relative; }
 .mascot-panel {
   position: relative;
@@ -421,14 +421,44 @@ li { margin-bottom: 0.4rem; }
   animation: mascot-drop 700ms cubic-bezier(0.2, 1.4, 0.4, 1) both;
 }
 .mascot-panel .dotgrid { position: absolute; inset: 0; opacity: 0.1; pointer-events: none; }
-.mascot {
+.mascot-badge {
   position: relative;
+  display: grid;
+  place-items: center;
   width: 100%;
-  max-width: 400px;
+  max-width: 380px;
+  aspect-ratio: 1 / 1;
   margin-inline: auto;
-  filter: drop-shadow(5px 6px 0 rgba(36, 58, 107, 0.35));
 }
-.wave-wing { transform-origin: 262px 240px; animation: wing-wave 2.6s ease-in-out 0.8s infinite; }
+.mascot-core {
+  display: grid;
+  place-items: center;
+  width: 60%;
+  aspect-ratio: 1;
+  border: var(--stroke);
+  border-radius: 50%;
+  background: var(--cream);
+  box-shadow: 8px 8px 0 var(--navy);
+  color: var(--navy);
+  font-size: clamp(5rem, 14vw, 8.5rem);
+  line-height: 1;
+  transform: rotate(-4deg);
+}
+.mascot-sticker {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  border: var(--stroke);
+  border-radius: 18px;
+  color: var(--navy);
+  font-size: 2.2rem;
+  line-height: 1;
+  box-shadow: 4px 4px 0 var(--navy);
+}
+.mascot-sticker-lego { top: 6%; left: 2%; background: var(--yellow); transform: rotate(-12deg); }
+.mascot-sticker-code { bottom: 8%; right: 2%; background: var(--red); color: var(--cream); transform: rotate(10deg); }
 
 .speech-tag {
   position: absolute;
@@ -485,6 +515,9 @@ li { margin-bottom: 0.4rem; }
 }
 .hero-lead { max-width: 34rem; margin-top: 30px; font-size: 1.125rem; color: rgba(36, 58, 107, 0.85); }
 .hero-hand { margin-top: 14px; font-family: var(--font-hand); font-size: 1.2rem; font-weight: 700; color: var(--red); }
+.hero-hand .ti { font-size: 1em; vertical-align: -0.1em; margin-right: 4px; }
+.info-card h3 .ti { color: var(--red); font-size: 0.85em; vertical-align: -0.06em; margin-right: 6px; }
+.speech-tag .ti { color: var(--red); font-size: 1.1em; vertical-align: -0.1em; margin-right: 4px; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 26px; margin-top: 28px; }
 .story-link {
   font-family: var(--font-head);
@@ -500,10 +533,6 @@ li { margin-bottom: 0.4rem; }
 @keyframes mascot-drop {
   from { opacity: 0; transform: translateY(-48px) rotate(-2deg); }
   to { opacity: 1; transform: translateY(0) rotate(0); }
-}
-@keyframes wing-wave {
-  0%, 100% { transform: rotate(0); }
-  50% { transform: rotate(-22deg); }
 }
 @keyframes draw-squiggle { to { stroke-dashoffset: 0; } }
 
